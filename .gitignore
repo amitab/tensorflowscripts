@@ -1,1 +1,7 @@
 *.ipynb_checkpoints/
+*.out
+*.zip
+*.onnx
+*logs/
+*.h5
+*.tar*
