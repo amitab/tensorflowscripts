@@ -5,3 +5,4 @@
 *logs/
 *.h5
 *.tar*
+*.csv
