@@ -5,8 +5,8 @@ services:
     container_name: tfcactus
     build: .
     ports:
-      - 10000:8888
-      - 16006:6006
+      - 20000:8888
+      - 26006:6006
     hostname: "tfcactus"
     security_opt:
       - seccomp:unconfined
