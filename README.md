@@ -31,3 +31,12 @@ https://www.kaggle.com/shivamb/how-autoencoders-work-intro-and-usecases/data
 ## storage_testing data:
 
 Downloads the data when you run the script
+
+
+## fisher data:
+
+Clone: `git@github.com:learning1234embed/NeuralWeightVirtualization.git`
+
+Run: `./download_dataset.sh && python weight_virtualization.py -mode=a -network_path=mnist`
+
+Copy the contents of the mnist folder except the `.py(c)` files
