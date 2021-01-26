@@ -72,7 +72,7 @@ def main(stats):
 # Usage example: python ff_classifier.py 2. 0. -0.32348594 1. 1. -0.04435613 0. 0. 1.
 if __name__ == "__main__":
     data = None
-    for _ in range(1):
+    for _ in range(5):
         data = main(data)
 
     avg_data(data)
