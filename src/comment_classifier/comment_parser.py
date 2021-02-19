@@ -1,8 +1,7 @@
 import time
 import numpy as np
 import json
-
-num_features = 200000
+import sys
 
 def time_to_features(timestamp, data, pos):
     dt_object = time.localtime(timestamp)
@@ -44,7 +43,8 @@ def shuffle_along_axis(a, axis):
     return np.take_along_axis(a,idx,axis=axis)
 
 if __name__ == "__main__":
-    f = open('./data/RC_2019-09-part1-5')
+    f = open(sys.argv[1])
+    num_features = int(sys.argv[2])
     c = 1000
     i = 0
 
