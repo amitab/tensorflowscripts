@@ -6,7 +6,7 @@ import time
 
 
 def load_model():
-    model = keras.models.load_model('simple_ff.h5')
+    model = keras.models.load_model(sys.argv[1])
     model.compile(
         optimizer=tf.keras.optimizers.SGD(learning_rate=0.01),
         loss=tf.keras.losses.BinaryCrossentropy(from_logits=True,
@@ -42,7 +42,7 @@ def main(stats):
         }
 
     start = time.process_time()
-    f = open(sys.argv[1])
+    f = open(sys.argv[2])
     end = time.process_time()
     stats['file_open_time'].append(end - start)
 
