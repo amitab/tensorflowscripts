@@ -40,3 +40,10 @@ Clone: `git@github.com:learning1234embed/NeuralWeightVirtualization.git`
 Run: `./download_dataset.sh && python weight_virtualization.py -mode=a -network_path=mnist`
 
 Copy the contents of the mnist folder except the `.py(c)` files
+
+The numpy files used by fisher/fisher.ipynb are here: `https://drive.google.com/file/d/1ZWFRlFCBwOHG6L2rNN1-ep56wZpTdMMH/view?usp=sharing`
+
+
+## Resnet data
+
+Downloads the data when you run the script
