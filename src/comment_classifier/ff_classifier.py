@@ -75,4 +75,5 @@ if __name__ == "__main__":
     for _ in range(5):
         data = main(data)
 
+    print(data)
     avg_data(data)

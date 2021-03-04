@@ -2,15 +2,6 @@ import tensorflow as tf
 
 import numpy as np
 
-tf.compat.v1.logging.set_verbosity(tf.logging.ERROR)
-
-from tensorflow_privacy.privacy.analysis import compute_dp_sgd_privacy
-from tensorflow_privacy.privacy.optimizers.dp_optimizer import DPGradientDescentGaussianOptimizer
-#from dp_optimizer_v2 import DPGradientDescentGaussianOptimizer
-
-from tensorflow_privacy.privacy.analysis.rdp_accountant import compute_rdp  # pylint: disable=g-import-not-at-top
-from tensorflow_privacy.privacy.analysis.rdp_accountant import get_privacy_spent
-
 train, test = tf.keras.datasets.mnist.load_data()
 train_data, train_labels = train
 test_data, test_labels = test
@@ -61,16 +52,10 @@ model = tf.keras.Sequential([
 ])
 model.summary()
 
-optimizer = DPGradientDescentGaussianOptimizer(
-    l2_norm_clip=l2_norm_clip,
-    noise_multiplier=noise_multiplier,
-    num_microbatches=num_microbatches,
-    learning_rate=learning_rate)
-
 loss = tf.keras.losses.CategoricalCrossentropy(
     from_logits=True, reduction=tf.losses.Reduction.NONE)
 
-model.compile(optimizer=optimizer, loss=loss, metrics=['accuracy'])
+model.compile(optimizer='Adam', loss=loss, metrics=['accuracy'])
 
 model.fit(train_data, train_labels,
           epochs=epochs,
